@@ -1,0 +1,68 @@
+{
+  "A00": {
+    "process": "No Internet",
+    "reason": "N/A",
+    "option1": "next;A01A",
+    "option2": "prev;N/A"
+  },
+  "A01A": {
+    "process": "Is the router offline or red?",
+    "reason": "N/A",
+    "option1": "yes;A02A",
+    "option2": "no;A02D"
+  },
+  "A02A": {
+    "process": "Is the MBU down?",
+    "reason": "N/A",
+    "option1": "yes;A03C",
+    "option2": "no;A03A"
+  },
+  "A03A": {
+    "process": "Restart the router",
+    "reason": "TBD",
+    "option1": "worked;A04A",
+    "option2": "didn't work;Router T/S Workflow"
+  },
+  "A04A": {
+    "process": "Confirm router connectivity and speeds",
+    "reason": "TBD",
+    "option1": "good speeds;End the call and/or assist the customer with anything else",
+    "option2": "slow speeds;Slow Speeds Workflow"
+  },
+  "A03C": {
+    "process": "Other nearby MBUs down?",
+    "reason": "TBD",
+    "option1": "yes;Outage Check Workflow",
+    "option2": "no;QRF"
+  },
+  "A02D": {
+    "process": "Multiple devices affected?",
+    "reason": "TBD",
+    "option1": "yes;A03D",
+    "option2": "no;A03E"
+  },
+  "A03D": {
+    "process": "Can they see the wifi signal icon on any device?",
+    "reason": "TBD",
+    "option1": "yes;A04D",
+    "option2": "no;TBD"
+  },
+  "A04D": {
+    "process": "Try Speedtest on router and speedtest.net or fast.com",
+    "reason": "TBD",
+    "option1": "next;A05D",
+    "option2": "N/A;N/A"
+  },
+  "A05D": {
+    "process": "Speeds slow on router and customer device?",
+    "reason": "TBD",
+    "option1": "yes;Router T/S Workflow",
+    "option2": "no;MBU T/S Workflow"
+  },
+  "A03E": {
+    "process": "Ensure WiFi is on. Restart Device. Troubleshoot the device the best you can.",
+    "reason": "TBD",
+    "option1": "working;End the call and/or assist customer with anything else",
+    "option2": "not working;3rd Party Issue"
+  }
+}
