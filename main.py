@@ -37,7 +37,7 @@ def step(data, option=""):
             elif choice == option2[0]:
                 return option2[1]
         except:
-            "Try again"
+            print("Try again")
 
 
 def main():
