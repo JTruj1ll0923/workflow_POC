@@ -10,18 +10,20 @@ class Notes:
     notes = []
 
     def add_notes(self, note_to_add):
-        self.notes.append(note_to_add)
+        if note_to_add != 'nan':
+            self.notes.append(note_to_add.replace('\n', ''))
 
     def print_notes(self):
         for note in self.notes:
-            print(note)
+            print(note, end=" ")
 
 
-def step(data, option=""):
+def step(data, notes, option=""):
     choice = ""
     if option == "":
         option = "A00"
     if data[option]["reason"] == "Resolved":
+        notes.add_notes(data[option]["notes"])
         return "Resolved"
     elif data[option]["reason"] == "Not Created Yet":
         return "Not Created Yet"
@@ -29,6 +31,7 @@ def step(data, option=""):
     # print(data[option]["reason"])
     option1 = str(data[option]["option1"]).split(sep=";")
     option2 = str(data[option]["option2"]).split(sep=";")
+    notes.add_notes(str(data[option]["notes"]))
     while choice is not option1[0] or choice is not option2[0]:
         try:
             choice = input(f"{option1[0]} or {option2[0]}")
@@ -47,7 +50,7 @@ def main():
     resolutions = ["Resolved", "Not Created Yet"]
     choice = ""
     while not resolved:
-        choice = step(data, choice)
+        choice = step(data, notes, choice)
         if choice in resolutions:
             resolved = True
             notes.print_notes()

@@ -1,4 +1,9 @@
 {
+  "Resolved": {
+    "process": "End the call and/or assist the customer with anything else",
+    "reason": "Resolved",
+    "notes": "Everything is working well now."
+  },
   "A00": {
     "process": "No Internet",
     "reason": "N/A",
@@ -9,25 +14,29 @@
     "process": "Is the router offline or red?",
     "reason": "N/A",
     "option1": "yes;A02A",
-    "option2": "no;A02D"
+    "option2": "no;A02D",
+    "notes": "{Customer} is having issues with no internet."
   },
   "A02A": {
     "process": "Is the MBU down?",
     "reason": "N/A",
     "option1": "yes;A03C",
-    "option2": "no;A03A"
+    "option2": "no;A03A",
+    "notes": "Router is offline/red."
   },
   "A03A": {
     "process": "Restart the router",
     "reason": "TBD",
     "option1": "worked;A04A",
-    "option2": "didn't work;Router T/S Workflow"
+    "option2": "didn't work;Router T/S Workflow",
+    "notes": "MBU is not offline."
   },
   "A04A": {
     "process": "Confirm router connectivity and speeds",
     "reason": "TBD",
-    "option1": "good speeds;End the call and/or assist the customer with anything else",
-    "option2": "slow speeds;Slow Speeds Workflow"
+    "option1": "good speeds;Resolved",
+    "option2": "slow speeds;Slow Speeds Workflow",
+    "notes": "Rebooting the router seems to have helped. Resolved."
   },
   "A03C": {
     "process": "Other nearby MBUs down?",
@@ -64,5 +73,71 @@
     "reason": "TBD",
     "option1": "working;End the call and/or assist customer with anything else",
     "option2": "not working;3rd Party Issue"
+  },
+  "B00": {
+    "process": "Slow Speeds",
+    "reason": "TBD",
+    "option1": "next;B01A",
+    "option2": "no;B00D"
+  },
+  "B01A": {
+    "process": "Is this affecting multiple devices?",
+    "reason": "TBD",
+    "option1": "yes;B02A",
+    "option2": "no;Device issue. Explain and Resolve."
+  },
+  "B02A": {
+    "process": "Router Internal Speedtest?",
+    "reason": "TBD",
+    "option1": "yes;B03A",
+    "option2": "no;B02B"
+  },
+  "B03A": {
+    "process": "Are Speeds slow on the Router?",
+    "reason": "TBD",
+    "option1": "yes;troubleshoot the MBU",
+    "option2": "no;B04A"
+  },
+  "B04A": {
+    "process": "Is this occuring during a specific time of the day?",
+    "reason": "TBD",
+    "option1": "yes;B05D",
+    "option2": "no;B05A"
+  },
+  "B05A": {
+    "process": "How Frequently are they experiencing this issue?",
+    "reason": "TBD",
+    "option1": "Process;N/A",
+    "option2": "N/A;N/A"
+  },
+  "B02B": {
+    "process": "Is the customer able to bypass?",
+    "reason": "TBD",
+    "option1": "yes;B03B",
+    "option2": "no;B02C"
+  },
+  "B03B": {
+    "process": "Are the speeds slow bypassed?",
+    "reason": "TBD",
+    "option1": "yes;B04B",
+    "option2": "no;B04A"
+  },
+  "B05D": {
+    "process": "Is this during peak hours? (4pm and 10pm)",
+    "reason": "TBD",
+    "option1": "yes;B05E",
+    "option2": "no;B05A"
+  },
+  "B02C": {
+    "process": "Speed test high end wifi Devices",
+    "reason": "TBD",
+    "option1": "next;B03C",
+    "option2": "N/A;N/A"
+  },
+  "B03C": {
+    "process": "Speeds still slow?",
+    "reason": "TBD",
+    "option1": "yes;B05C",
+    "option2": "no;B04C"
   }
 }
